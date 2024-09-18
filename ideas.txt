@@ -1,1 +1,16 @@
 Put ideas here:
+
+
+Combat System:
+    Defending:
+        Player walks slower when sheilding
+        When blocking enemy attacks, player must time shield correctly
+        Worse the timing, the more damage taken
+        If your timing is perfect, then you perform a parry and the enemy gets staggered
+        
+    Attacking:
+        Player can do a lunge attack, a regular attack, and a charged attack
+        Different weapons are better at certain attacks than others
+        Weapon classes include: swords, spears, axes
+        Swords are better at regular attacks, spears are good with lunge attacks, and axes are good for charged attacks
+        1.5x damage is done when enemies are staggered

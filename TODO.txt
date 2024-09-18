@@ -1,0 +1,18 @@
+Animations:
+    Player:
+        Regular Attack
+        Charge Up Attack
+        Lunge Attack
+        Jump
+        Shield
+        Sheild Strafe
+
+    Enemy:
+        Slam Attack
+        Attack Stance
+        Poke Attack
+        Attack stance walk (forwards and backwards)
+        walk
+
+
+    
