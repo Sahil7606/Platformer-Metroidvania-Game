@@ -1,5 +1,12 @@
+New Features or edits to existing features must be branched off development
+Mechanics:
+    Player Jump
+    Player Animations
+    Player Attack
+    
 Animations:
     Player:
+        Idle
         Regular Attack
         Charge Up Attack
         Lunge Attack
