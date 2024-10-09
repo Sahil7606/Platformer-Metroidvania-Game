@@ -35,4 +35,5 @@ public class Player_Walking : MonoBehaviour
             transform.localScale = new Vector2(MoveInput.x, 1);
         }
     }
+
 }
