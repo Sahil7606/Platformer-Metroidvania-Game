@@ -38,7 +38,7 @@ public class PlayerStateMachine : MonoBehaviour
         playerMovement.Move();
         playerJump.Jump();
 
-        if (groundChecker.isGrounded && playerRigidbody.velocity.y == 0)
+        if (groundChecker.isGrounded)
         {
             CurrentState = PlayerState.Grounded;
         }
@@ -52,6 +52,6 @@ public class PlayerStateMachine : MonoBehaviour
             CurrentState = PlayerState.Falling;
         }
 
-        //Debug.Log(CurrentState);
+        Debug.Log(CurrentState);
     }
 }

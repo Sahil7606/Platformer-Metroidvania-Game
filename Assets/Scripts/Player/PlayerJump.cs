@@ -64,15 +64,17 @@ public class PlayerJump : MonoBehaviour
     }
 
     // Stops player from holding button in order to repeatedlly jump
+    private bool hasJumped;
     void OnJump(InputValue jumpButton)
     {
-        if (jumpButton.isPressed && stateMachine.CurrentState == PlayerState.Grounded)
+        if (jumpButton.isPressed && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped)
         {
             jumpButtonDown = true;
         }
         else if (!jumpButton.isPressed)
         {
             jumpButtonDown = false;
+            hasJumped = false;
         }
     }
 
@@ -80,11 +82,12 @@ public class PlayerJump : MonoBehaviour
     {
         // Adds initial force to jump if grounded
         Debug.Log(jumpButtonDown); 
-        if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Grounded)
+        if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped)
         {
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpHeight);
+            hasJumped = true;
         }
-        else if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Jumping) // Adds boost when holding button down
+        else if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Jumping && hasJumped) // Adds boost when holding button down
         {
             if (buttonHoldTime <= maxHoldTime)
             {

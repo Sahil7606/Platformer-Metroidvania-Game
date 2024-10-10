@@ -2029,7 +2029,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2040,7 +2040,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 0.5, y: 0.3}
   m_EdgeRadius: 0
 --- !u!114 &992395403
 MonoBehaviour:
@@ -2190,7 +2190,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.5, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 992395401}
@@ -2283,11 +2283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41792fc66360ac43af5be58c5d68ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  jumpHeight: 0
-  jumpHoldStrength: 0
-  maxHoldTime: 0
+  playerRigidbody: {fileID: 1710413294}
+  playerAnimator: {fileID: 1710413295}
+  jumpHeight: 12.5
+  jumpHoldStrength: 1.1
+  maxHoldTime: 0.5
   jumpButtonDown: 0
 --- !u!114 &1710413302
 MonoBehaviour:
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fb4186e3aef404898c4934ca204c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 1710413304}
   playerJump: {fileID: 1710413301}
   groundChecker: {fileID: 992395403}
 --- !u!114 &1710413303
@@ -2316,9 +2316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91bc54cf7770a3458285f715c4369ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 0}
-  fallGravityScale: 0
-  defaultGravityScale: 0
+  playerRigidbody: {fileID: 1710413294}
+  fallGravityScale: 9
+  defaultGravityScale: 6
 --- !u!114 &1710413304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2331,9 +2331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd85529be4472c8488279987774b6fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  speed: 0
+  playerRigidbody: {fileID: 1710413294}
+  playerAnimator: {fileID: 1710413295}
+  speed: 6
   MoveInput: {x: 0, y: 0}
 --- !u!1 &1777841373
 GameObject:
