@@ -13,6 +13,15 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public Vector2 MoveInput;
 
+    // Reference to player state machine
+    PlayerStateMachine stateMachine;
+
+    void Start()
+    {
+        // Gets the state machine
+        stateMachine = GetComponent<PlayerStateMachine>();
+    }
+
     // Uses Input system to detect movement input
     void OnMove(InputValue input)
     {

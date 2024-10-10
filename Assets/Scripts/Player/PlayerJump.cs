@@ -29,7 +29,6 @@ public class PlayerJump : MonoBehaviour
 
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] Animator playerAnimator;
-    [SerializeField] GroundChecker groundChecker;
 
     [Header ("Jump Properties")]
 
@@ -37,18 +36,25 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float jumpHoldStrength; // How much boost to be added on button hold
     [SerializeField] float maxHoldTime; // Maximum time that boost can be applied for
 
-    [HideInInspector] public bool isJumping;
+    [HideInInspector] public bool jumpButtonDown;
 
-    bool jumpButtonDown;
     float buttonHoldTime; // Keeps track of how long button is held
 
+    // Reference to player state machine
+    PlayerStateMachine stateMachine;
+
+    void Start()
+    {
+        // Gets player state machine
+        stateMachine = GetComponent<PlayerStateMachine>();
+    }
 
     // Keeps track of how long Jump Button is held
-    void FixedUpdate()
+    void Update()
     {
-        if (isJumping)
+        if (jumpButtonDown)
         {
-            buttonHoldTime += Time.fixedDeltaTime;
+            buttonHoldTime += Time.deltaTime;
         }
         else
         {
@@ -57,10 +63,10 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-    // Detects when button is pressed
+    // Stops player from holding button in order to repeatedlly jump
     void OnJump(InputValue jumpButton)
     {
-        if (jumpButton.isPressed && groundChecker.isGrounded)
+        if (jumpButton.isPressed && stateMachine.CurrentState == PlayerState.Grounded)
         {
             jumpButtonDown = true;
         }
@@ -72,23 +78,19 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        // Adds initial force to jump
-        if (jumpButtonDown && !isJumping)
+        // Adds initial force to jump if grounded
+        Debug.Log(jumpButtonDown); 
+        if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Grounded)
         {
-            isJumping = true;
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpHeight);
         }
-        else if (jumpButtonDown && isJumping) // Adds boost when holding button down
+        else if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Jumping) // Adds boost when holding button down
         {
             if (buttonHoldTime <= maxHoldTime)
             {
                 // Subtract holdtime to gradually lower boost in order to smoothen the jump
                 playerRigidbody.velocity += new Vector2(0, jumpHoldStrength - (buttonHoldTime / 3.5f));
             }
-        }
-        else if (!jumpButtonDown)
-        {
-            isJumping = false;
         }
     }
 }
