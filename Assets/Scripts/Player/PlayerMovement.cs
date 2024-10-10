@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.Android;
 using UnityEngine.InputSystem;
 
-public class Player_Walking : MonoBehaviour
+[RequireComponent(typeof(PlayerStateMachine))]
+public class PlayerMovement : MonoBehaviour
 {
     [Header ("Components")] 
     [SerializeField] Rigidbody2D playerRigidbody;
@@ -13,11 +13,6 @@ public class Player_Walking : MonoBehaviour
 
     [HideInInspector] public Vector2 MoveInput;
 
-    void FixedUpdate()
-    {
-        Move();
-    }
-
     // Uses Input system to detect movement input
     void OnMove(InputValue input)
     {
@@ -25,7 +20,7 @@ public class Player_Walking : MonoBehaviour
     }
 
     // This makes the player actually move
-    void Move()
+    public void Move()
     {
         playerRigidbody.velocity = new Vector2(MoveInput.x * speed, playerRigidbody.velocity.y);
 
