@@ -38,7 +38,7 @@ public class PlayerStateMachine : MonoBehaviour
         playerMovement.Move();
         playerJump.Jump();
 
-        if (groundChecker.isGrounded && playerRigidbody.velocity.y == 0)
+        if (groundChecker.isGrounded && Mathf.Abs(playerRigidbody.velocity.y) < Mathf.Epsilon)
         {
             CurrentState = PlayerState.Grounded;
         }
@@ -47,7 +47,7 @@ public class PlayerStateMachine : MonoBehaviour
             CurrentState = PlayerState.Jumping;
         }
         // Epsilon is a number close to 0. Used to stop floating point errors.
-        else if (playerRigidbody.velocity.y < Mathf.Epsilon && CurrentState != PlayerState.Grounded) 
+        else if (playerRigidbody.velocity.y < -1 * Mathf.Epsilon && CurrentState != PlayerState.Grounded) 
         {
             CurrentState = PlayerState.Falling;
         }
