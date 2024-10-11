@@ -38,7 +38,8 @@ public class PlayerJump : MonoBehaviour
 
     [HideInInspector] public bool jumpButtonDown;
 
-    float buttonHoldTime; // Keeps track of how long button is held
+    private float buttonHoldTime; // Keeps track of how long button is held
+    private bool hasJumped; // Used to stop player from holding jump to repeatedly jump
 
     // Reference to player state machine
     PlayerStateMachine stateMachine;
@@ -52,7 +53,8 @@ public class PlayerJump : MonoBehaviour
     // Keeps track of how long Jump Button is held
     void Update()
     {
-        if (jumpButtonDown)
+        // Starts counting if player is holding jump button and has jumped
+        if (jumpButtonDown && hasJumped)
         {
             buttonHoldTime += Time.deltaTime;
         }
@@ -63,11 +65,9 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-    // Stops player from holding button in order to repeatedlly jump
-    private bool hasJumped;
     void OnJump(InputValue jumpButton)
     {
-        if (jumpButton.isPressed && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped)
+        if (jumpButton.isPressed/* && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped*/)
         {
             jumpButtonDown = true;
         }
@@ -81,7 +81,6 @@ public class PlayerJump : MonoBehaviour
     public void Jump()
     {
         // Adds initial force to jump if grounded
-        Debug.Log(jumpButtonDown); 
         if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped)
         {
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpHeight);
