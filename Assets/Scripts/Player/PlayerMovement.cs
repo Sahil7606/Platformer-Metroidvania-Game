@@ -36,7 +36,12 @@ public class PlayerMovement : MonoBehaviour
         // Flips player sprite based on direction if moving
         if (Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon) // Epsilon is a number very close to 0. Gets rid of floating point inaccuracies
         {
+            playerAnimator.SetBool("IsWalking", true);
             transform.localScale = new Vector2(MoveInput.x, 1);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsWalking", false);
         }
     }
 
