@@ -67,7 +67,7 @@ public class PlayerJump : MonoBehaviour
 
     void OnJump(InputValue jumpButton)
     {
-        if (jumpButton.isPressed/* && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped*/)
+        if (jumpButton.isPressed)
         {
             jumpButtonDown = true;
         }
@@ -93,6 +93,20 @@ public class PlayerJump : MonoBehaviour
                 // Subtract holdtime to gradually lower boost in order to smoothen the jump
                 playerRigidbody.velocity += new Vector2(0, jumpHoldStrength - (buttonHoldTime / 3.5f));
             }
+        }
+
+        PlayJumpAnim();
+    }
+
+    void PlayJumpAnim()
+    {
+        if (stateMachine.CurrentState == PlayerState.Jumping)
+        {
+            playerAnimator.SetBool("IsJumping", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsJumping", false);
         }
     }
 }
