@@ -8,7 +8,7 @@ public enum PlayerState
 {
     Grounded,
     Jumping,
-    Falling
+    Falling,
 }
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -38,7 +38,7 @@ public class PlayerStateMachine : MonoBehaviour
         playerMovement.Move();
         playerJump.Jump();
 
-        if (groundChecker.isGrounded && Mathf.Abs(playerRigidbody.velocity.y) < Mathf.Epsilon)
+        if (groundChecker.isGrounded)
         {
             CurrentState = PlayerState.Grounded;
         }

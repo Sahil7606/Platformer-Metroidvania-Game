@@ -2285,9 +2285,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 1710413294}
   playerAnimator: {fileID: 1710413295}
-  jumpHeight: 12.5
-  jumpHoldStrength: 1.1
-  maxHoldTime: 0.5
+  jumpHeight: 13.5
+  jumpHoldStrength: 1.3
+  maxHoldTime: 0.3
   jumpButtonDown: 0
 --- !u!114 &1710413302
 MonoBehaviour:

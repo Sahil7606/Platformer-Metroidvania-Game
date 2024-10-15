@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a551c3c9cf875041a80e4b7f0b3045b
+guid: 3dfdc3b340ac33b4287c3c3a64ad023f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638639194708507034
+  platformSettingsDirtyTick: 638642505692839433
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,78 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Frame_0
+  - name: Player Jump
     originalName: 
-    pivot: {x: 1, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 75
-      y: 61
-      width: 16
-      height: 30
-    spriteID: 01d3830c243a7da4fa609403a0317546
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 75, y: 61}
-  - name: Frame_1
-    originalName: 
-    pivot: {x: 1, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 79
-      width: 17
-      height: 32
-    spriteID: 8031f8ec9a26262419b7d1a5e74fcace
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 79}
-  - name: Frame_2
-    originalName: 
-    pivot: {x: 1.0625, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 51
-      y: 61
-      width: 16
-      height: 33
-    spriteID: 4138398b8b784134896bf3e766fd4e04
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 51, y: 61}
-  - name: Frame_3
-    originalName: 
-    pivot: {x: 0.3846154, y: 0}
+    pivot: {x: 0.5, y: -0.030303031}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 39
-      height: 35
-    spriteID: d9c304ad0e4b47b48a66fcaccf81b997
+      width: 18
+      height: 33
+    spriteID: 56e5064bd0979f0428141abfde503c09
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,138 +141,24 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Frame_4
-    originalName: 
-    pivot: {x: 0.3846154, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 47
-      width: 39
-      height: 24
-    spriteID: e7bfe57d60ffce840aa86e608a082cf5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 47}
-  - name: Frame_5
-    originalName: 
-    pivot: {x: 0.36585364, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 51
-      y: 32
-      width: 41
-      height: 21
-    spriteID: 936e55193b66d3e44b3afe2250de8e20
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 51, y: 32}
-  - name: Frame_6
-    originalName: 
-    pivot: {x: 0.36363637, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 51
-      y: 4
-      width: 44
-      height: 20
-    spriteID: 9f9ffd1181da0db4bab648ba31701121
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 51, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1635008789
-    name: Player Attack Basic
+    guid: 1749790281
+    name: Player Jump
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: Player Jump
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 16
-        y: 0
-        width: 16
-        height: 30
-      spriteId: 01d3830c243a7da4fa609403a0317546
-    - name: Frame_1
-      frameIndex: 1
-      additiveSortOrder: 0
-      cellRect:
-        x: 15
-        y: 0
-        width: 17
-        height: 32
-      spriteId: 8031f8ec9a26262419b7d1a5e74fcace
-    - name: Frame_2
-      frameIndex: 2
-      additiveSortOrder: 0
-      cellRect:
-        x: 15
-        y: 0
-        width: 16
+        x: 23
+        y: 1
+        width: 18
         height: 33
-      spriteId: 4138398b8b784134896bf3e766fd4e04
-    - name: Frame_3
-      frameIndex: 3
-      additiveSortOrder: 0
-      cellRect:
-        x: 17
-        y: 0
-        width: 39
-        height: 35
-      spriteId: d9c304ad0e4b47b48a66fcaccf81b997
-    - name: Frame_4
-      frameIndex: 4
-      additiveSortOrder: 0
-      cellRect:
-        x: 17
-        y: 0
-        width: 39
-        height: 24
-      spriteId: e7bfe57d60ffce840aa86e608a082cf5
-    - name: Frame_5
-      frameIndex: 5
-      additiveSortOrder: 0
-      cellRect:
-        x: 17
-        y: 0
-        width: 41
-        height: 21
-      spriteId: 936e55193b66d3e44b3afe2250de8e20
-    - name: Frame_6
-      frameIndex: 6
-      additiveSortOrder: 0
-      cellRect:
-        x: 16
-        y: 0
-        width: 44
-        height: 20
-      spriteId: 9f9ffd1181da0db4bab648ba31701121
+      spriteId: 56e5064bd0979f0428141abfde503c09
     linkedCells: []
     parentIndex: -1
   platformSettings:
