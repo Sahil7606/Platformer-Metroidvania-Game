@@ -51,12 +51,12 @@ public class PlayerJump : MonoBehaviour
     }
 
     // Keeps track of how long Jump Button is held
-    void Update()
+    void FixedUpdate()
     {
         // Starts counting if player is holding jump button and has jumped
         if (jumpButtonDown && hasJumped)
         {
-            buttonHoldTime += Time.deltaTime;
+            buttonHoldTime += Time.fixedDeltaTime;
         }
         else
         {

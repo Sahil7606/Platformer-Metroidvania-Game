@@ -7,6 +7,7 @@ To learn about enums go here - https://www.youtube.com/watch?v=_kDuTk3qeAc
 public enum PlayerState
 {
     Grounded,
+    Attacking,
     Jumping,
     Falling,
 }
@@ -17,6 +18,7 @@ public class PlayerStateMachine : MonoBehaviour
     [Header ("Action Scripts")]
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerJump playerJump;
+    [SerializeField] PlayerAttack playerAttack;
     
     [Header ("Sensors")]
     [SerializeField] GroundChecker groundChecker;
@@ -35,23 +37,33 @@ public class PlayerStateMachine : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerMovement.Move();
-        playerJump.Jump();
+        if (CurrentState != PlayerState.Attacking)
+        {
+            playerMovement.Move();
+            playerJump.Jump();
+        }
+        else
+        {
+            playerAttack.Attack();
+        }
+        
 
-        if (groundChecker.isGrounded)
+
+        if (groundChecker.isGrounded && Mathf.Abs(playerRigidbody.velocity.y) < 5)
         {
-            CurrentState = PlayerState.Grounded;
+            CurrentState = playerAttack.isAttacking ? PlayerState.Attacking : PlayerState.Grounded;
         }
-        else if (playerJump.jumpButtonDown && CurrentState == PlayerState.Grounded)
+        else 
         {
-            CurrentState = PlayerState.Jumping;
-        }
-        // Epsilon is a number close to 0. Used to stop floating point errors.
-        else if (playerRigidbody.velocity.y < -1 * Mathf.Epsilon && CurrentState != PlayerState.Grounded) 
-        {
-            CurrentState = PlayerState.Falling;
+            if (playerJump.jumpButtonDown && CurrentState == PlayerState.Grounded)
+            {
+                CurrentState = PlayerState.Jumping;
+            }
+            else if (playerRigidbody.velocity.y < -5) 
+            {
+                CurrentState = PlayerState.Falling;
+            }
         }
 
-        Debug.Log(CurrentState);
     }
 }

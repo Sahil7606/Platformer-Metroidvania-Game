@@ -2029,7 +2029,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 0, y: -1.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2072,6 +2072,7 @@ GameObject:
   - component: {fileID: 1710413302}
   - component: {fileID: 1710413304}
   - component: {fileID: 1710413301}
+  - component: {fileID: 1710413305}
   - component: {fileID: 1710413303}
   m_Layer: 0
   m_Name: Player
@@ -2169,7 +2170,7 @@ SpriteRenderer:
   m_SortingLayerID: 418191883
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5599345974158441331, guid: 383399003ca34f542abe903832cb6363, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42616cb253ea3e64b8e65261b0506f57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2189,7 +2190,7 @@ Transform:
   m_GameObject: {fileID: 1710413293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5, y: -3, z: 0}
+  m_LocalPosition: {x: -12.5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2228,18 +2229,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032403708, y: 0.62381727}
+  m_Offset: {x: 0, y: -0.37618273}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49999997, y: 0}
-    oldSize: {x: 1, y: 1.875}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 2}
     newSize: {x: 1, y: 1.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6924987, y: 1.2577554}
+  m_Size: {x: 0.625, y: 1.2577554}
   m_EdgeRadius: 0
 --- !u!114 &1710413300
 MonoBehaviour:
@@ -2303,6 +2304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1710413304}
   playerJump: {fileID: 1710413301}
+  playerAttack: {fileID: 1710413305}
   groundChecker: {fileID: 992395403}
 --- !u!114 &1710413303
 MonoBehaviour:
@@ -2335,6 +2337,21 @@ MonoBehaviour:
   playerAnimator: {fileID: 1710413295}
   speed: 6
   MoveInput: {x: 0, y: 0}
+--- !u!114 &1710413305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710413293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2ae3abc94f33e44b695b55df4f2b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigid: {fileID: 1710413294}
+  playerAnimator: {fileID: 1710413295}
+  isAttacking: 0
 --- !u!1 &1777841373
 GameObject:
   m_ObjectHideFlags: 0
