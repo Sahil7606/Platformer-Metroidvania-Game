@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Composites;
 
 /*
 Jump Full Implementation Details
@@ -19,94 +18,89 @@ IMPLEMENT LATER:
     Coyote Time
     Slight camera shake
     Jump Attacks
-
 */
 
-[RequireComponent(typeof(PlayerStateMachine))]
+[RequireComponent(typeof(TraversalStateMachine))]
 public class PlayerJump : MonoBehaviour
 {
     [Header ("Components")]
-
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] Animator playerAnimator;
 
     [Header ("Jump Properties")]
-
-    [SerializeField] float jumpHeight;
-    [SerializeField] float jumpHoldStrength; // How much boost to be added on button hold
-    [SerializeField] float maxHoldTime; // Maximum time that boost can be applied for
+    [SerializeField] float jumpHeight;        // Initial jump height
+    [SerializeField] float jumpHoldStrength;  // Additional height when holding jump
+    [SerializeField] float maxHoldTime;       // Max duration for hold-boost
 
     [HideInInspector] public bool jumpButtonDown;
-
-    private float buttonHoldTime; // Keeps track of how long button is held
-    private bool hasJumped; // Used to stop player from holding jump to repeatedly jump
+    [HideInInspector] public bool hasJumped;  // Prevents repeated jumping
+    private float buttonHoldTime;             // Time the jump button is held
+    private bool initialForceApplied;         // Tracks if initial jump force was applied
 
     // Reference to player state machine
-    PlayerStateMachine stateMachine;
+    TraversalStateMachine stateMachine;
 
-    void Start()
+    private void Start()
     {
-        // Gets player state machine
-        stateMachine = GetComponent<PlayerStateMachine>();
+        // Gets the player state machine
+        stateMachine = GetComponent<TraversalStateMachine>();
     }
 
-    // Keeps track of how long Jump Button is held
-    void FixedUpdate()
+    // Handles jump mechanics
+    private void FixedUpdate()
     {
-        // Starts counting if player is holding jump button and has jumped
-        if (jumpButtonDown && hasJumped)
+        // Tracks the time the button is held down
+        if (jumpButtonDown && initialForceApplied)
         {
             buttonHoldTime += Time.fixedDeltaTime;
         }
         else
         {
-            // Resets to prepare for next jump
+            // Resets hold time for next jump
             buttonHoldTime = 0;
         }
-    }
 
-    void OnJump(InputValue jumpButton)
-    {
-        if (jumpButton.isPressed)
+        // If not jumping anymore, reset the initial force flag
+        if (stateMachine.traversalState != TraversalState.Jumping)
         {
-            jumpButtonDown = true;
-        }
-        else if (!jumpButton.isPressed)
-        {
-            jumpButtonDown = false;
-            hasJumped = false;
-        }
-    }
-
-    public void Jump()
-    {
-        // Adds initial force to jump if grounded
-        if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Grounded && !hasJumped)
-        {
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpHeight);
-            hasJumped = true;
-        }
-        else if (jumpButtonDown && stateMachine.CurrentState == PlayerState.Jumping && hasJumped) // Adds boost when holding button down
-        {
-            if (buttonHoldTime <= maxHoldTime)
-            {
-                // Subtract holdtime to gradually lower boost in order to smoothen the jump
-                playerRigidbody.velocity += new Vector2(0, jumpHoldStrength - (buttonHoldTime / 3.5f));
-            }
+            initialForceApplied = false;
         }
 
         PlayJumpAnim();
     }
 
-    void PlayJumpAnim()
+    // Input system callback when jump button is pressed
+    void OnJump(InputValue jumpButton)
     {
-        if (stateMachine.CurrentState == PlayerState.Jumping)
+        // Tracks if the jump button is pressed
+        jumpButtonDown = jumpButton.isPressed;
+        if (!jumpButtonDown)
         {
-            playerAnimator.SetBool("IsJumping", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("IsJumping", false);
+            hasJumped = false; // Reset jump when button is released
         }
     }
+
+    // Main jump logic
+    public void Jump()
+    {
+        // Initial force for the jump
+        if (!initialForceApplied)
+        {
+            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpHeight);
+            hasJumped = true;
+            initialForceApplied = true;
+        }
+        // Apply additional boost when the button is held
+        else if (jumpButtonDown && hasJumped && buttonHoldTime <= maxHoldTime)
+        {
+            playerRigidbody.velocity += new Vector2(0, jumpHoldStrength - (buttonHoldTime / 3.5f));
+        }
+    }
+
+    // Controls jumping animation based on state
+    void PlayJumpAnim()
+    {
+        playerAnimator.SetBool("IsJumping", stateMachine.traversalState == TraversalState.Jumping);
+    }
 }
+
