@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerStateMachine))]
+[RequireComponent(typeof(TraversalStateMachine))]
 public class PlayerGravityHandler : MonoBehaviour
 {
     [Header ("Gravity Settings")]
@@ -11,18 +11,18 @@ public class PlayerGravityHandler : MonoBehaviour
     [SerializeField] float defaultGravityScale;
 
     // Reference to state machine
-    PlayerStateMachine stateMachine;
+    TraversalStateMachine stateMachine;
 
     void Start()
     {
         // Gets state machine
-        stateMachine = GetComponent<PlayerStateMachine>();
+        stateMachine = GetComponent<TraversalStateMachine>();
     }
     
     // Adjusts gravity based on y velocity
     void FixedUpdate()
     {
-        if (stateMachine.CurrentState == PlayerState.Falling)
+        if (stateMachine.traversalState == TraversalState.Falling)
         {
             playerRigidbody.gravityScale = fallGravityScale;
         }
