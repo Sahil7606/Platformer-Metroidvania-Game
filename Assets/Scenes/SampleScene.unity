@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 1710413308}
   - component: {fileID: 1710413307}
   - component: {fileID: 1710413306}
-  - component: {fileID: 1710413305}
+  - component: {fileID: 1710413309}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1987,25 +1987,7 @@ MonoBehaviour:
   playerMovement: {fileID: 1710413308}
   playerJump: {fileID: 1710413307}
   groundChecker: {fileID: 992395403}
---- !u!114 &1710413305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710413293}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e2ae3abc94f33e44b695b55df4f2b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRigid: {fileID: 1710413294}
-  playerAnimator: {fileID: 1710413295}
-  basicCombo:
-  - {fileID: 11400000, guid: 7fd6aefb9887e2a4bb9ad3e603aaf246, type: 2}
-  - {fileID: 11400000, guid: cf14c22ef931350469b66912852e9576, type: 2}
-  - {fileID: 11400000, guid: e6e95f2dec0c64d4ba969691de2a3794, type: 2}
-  isAttacking: 0
+  attackStateMachine: {fileID: 1710413309}
 --- !u!114 &1710413306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,6 +2038,19 @@ MonoBehaviour:
   playerAnimator: {fileID: 1710413295}
   speed: 6
   MoveInput: {x: 0, y: 0}
+--- !u!114 &1710413309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710413293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67d815c75e083944a58e84074de6e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackButtonDown: 0
 --- !u!1 &1777841373
 GameObject:
   m_ObjectHideFlags: 0

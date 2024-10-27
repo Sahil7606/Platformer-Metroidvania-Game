@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "BasicAttack",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "e0d40472-e661-4226-95b9-76a1ef0884ab",
                     "expectedControlType": "Button",
@@ -195,7 +195,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BasicAttack",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -206,7 +206,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "BasicAttack",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
