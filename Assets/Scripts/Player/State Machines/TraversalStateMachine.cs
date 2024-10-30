@@ -27,12 +27,12 @@ public class TraversalStateMachine : MonoBehaviour
 
     // Reference for the state machine that controls attacks
     [Header ("Attack State Machine - Optional")]
-    [SerializeField] AttackStateMachine attackStateMachine;
 
-    Rigidbody2D playerRigidbody;
+    private Rigidbody2D playerRigidbody;
 
     public TraversalState traversalState {get; private set;}// Keeps track of traversal state
     public bool isGrounded {get; private set;} // Checks if player is grounded
+    public bool canAttack {get; private set;}
 
     void Awake()
     {
@@ -43,12 +43,6 @@ public class TraversalStateMachine : MonoBehaviour
     void Update() // Manages state in update to account for inputs between frames
     {
         ManageState();
-
-        // If Attack State Machine is attached then checks for attack
-        if (attackStateMachine)
-        {
-            CheckForAttack();
-        }
     }
 
     void FixedUpdate() // All physics stuff done in fixed update
@@ -69,19 +63,23 @@ public class TraversalStateMachine : MonoBehaviour
         switch (traversalState)
         {
             case TraversalState.Idle:
+                canAttack = true;
                 if (Mathf.Abs(playerMovement.MoveInput.x) > Mathf.Epsilon) { SwitchState(TraversalState.Walking); break; }
                 if (playerJump.jumpButtonDown && !playerJump.hasJumped) { SwitchState(TraversalState.Jumping); break; }
                 if (playerRigidbody.velocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
                 break;
             case TraversalState.Walking:
+                canAttack = true;
                 if (Mathf.Abs(playerMovement.MoveInput.x) < Mathf.Epsilon) { SwitchState(TraversalState.Idle); break; }
                 if (playerJump.jumpButtonDown && !playerJump.hasJumped) { SwitchState(TraversalState.Jumping); break; }
                 if (playerRigidbody.velocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
                 break;
             case TraversalState.Jumping:
+                canAttack = false;
                 if (playerRigidbody.velocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
                 break;
             case TraversalState.Falling:
+                canAttack = false;
                 if (isGrounded) { SwitchState(TraversalState.Idle); break; }
                 break;           
             
@@ -92,10 +90,5 @@ public class TraversalStateMachine : MonoBehaviour
     {
         traversalState = state;
         Debug.Log("State Changed to " + traversalState);
-    }
-
-    void CheckForAttack()
-    {
-
     }
 }

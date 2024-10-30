@@ -1987,7 +1987,6 @@ MonoBehaviour:
   playerMovement: {fileID: 1710413308}
   playerJump: {fileID: 1710413307}
   groundChecker: {fileID: 992395403}
-  attackStateMachine: {fileID: 1710413309}
 --- !u!114 &1710413306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2047,10 +2046,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1710413293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67d815c75e083944a58e84074de6e59, type: 3}
+  m_Script: {fileID: 11500000, guid: b41d5a44b31319c488a6ecff9f9fe162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackButtonDown: 0
+  combo:
+  - {fileID: 11400000, guid: 7fd6aefb9887e2a4bb9ad3e603aaf246, type: 2}
+  - {fileID: 11400000, guid: cf14c22ef931350469b66912852e9576, type: 2}
+  - {fileID: 11400000, guid: e6e95f2dec0c64d4ba969691de2a3794, type: 2}
 --- !u!1 &1777841373
 GameObject:
   m_ObjectHideFlags: 0

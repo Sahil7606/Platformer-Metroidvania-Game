@@ -11,10 +11,10 @@ public class Attack : ScriptableObject
     public AnimationClip animation;
     
     [Tooltip ("Frames before weapon is swung")]
-    public int windupFrames;
+    public int startupFrames;
 
     [Tooltip ("Frames that weapon hitbox is active")]
-    public int attackFrames;
+    public int activeFrames;
 
     [Tooltip ("Any remaining frames")]
     public int recoveryFrames;
