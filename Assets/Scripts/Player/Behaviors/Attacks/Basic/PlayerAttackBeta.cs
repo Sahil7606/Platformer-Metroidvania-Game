@@ -24,6 +24,8 @@ public class PlayerAttackBeta : MonoBehaviour
     Coroutine frameDataSM;
     Animator animator;
 
+    RaycastHit2D attackRadius;
+
     // Start is called before the first frame update
     void Start()
     {
