@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerStateMachine))]
+[RequireComponent(typeof(TraversalStateMachine))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header ("Components")] 
@@ -14,12 +14,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Vector2 MoveInput;
 
     // Reference to player state machine
-    PlayerStateMachine stateMachine;
+    TraversalStateMachine stateMachine;
 
-    void Start()
+    private void Start()
     {
         // Gets the state machine
-        stateMachine = GetComponent<PlayerStateMachine>();
+        stateMachine = GetComponent<TraversalStateMachine>();
     }
 
     // Uses Input system to detect movement input
@@ -36,7 +36,21 @@ public class PlayerMovement : MonoBehaviour
         // Flips player sprite based on direction if moving
         if (Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon) // Epsilon is a number very close to 0. Gets rid of floating point inaccuracies
         {
-            transform.localScale = new Vector2(MoveInput.x, 1);
+            transform.localScale = new Vector2(Mathf.Sign(MoveInput.x), 1);
+        }
+
+        PlayWalkAnim();        
+    }
+
+    void PlayWalkAnim()
+    {
+        if (stateMachine.traversalState == TraversalState.Walking)
+        {
+            playerAnimator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsWalking", false);
         }
     }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 383399003ca34f542abe903832cb6363
+guid: 3dfdc3b340ac33b4287c3c3a64ad023f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638647871889395667
+  platformSettingsDirtyTick: 638642505692839433
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Player
+  - name: Player Jump
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.030303031}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 30
-    spriteID: 230a1b92b8220c242ae6ec8355a36db0
+      width: 18
+      height: 33
+    spriteID: 56e5064bd0979f0428141abfde503c09
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,21 +144,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1687901567
-    name: Player
+    guid: 1749790281
+    name: Player Jump
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Player
+    - name: Player Jump
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 24
-        y: 0
-        width: 16
-        height: 30
-      spriteId: 230a1b92b8220c242ae6ec8355a36db0
+        x: 23
+        y: 1
+        width: 18
+        height: 33
+      spriteId: 56e5064bd0979f0428141abfde503c09
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -201,4 +201,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 32}
+  canvasSize: {x: 64, y: 48}
