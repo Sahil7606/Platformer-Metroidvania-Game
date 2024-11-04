@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e258e259aa630fb498642c94bbfa0a69, type: 3}
-  m_Name: Basic Attack 2
+  m_Name: Basic Attack 3
   m_EditorClassIdentifier: 
-  animation: {fileID: 0}
-  windupFrames: 0
-  attackFrames: 0
-  recoveryFrames: 0
-  damageMultiplier: 0
+  animation: {fileID: 7400000, guid: b3bfa4586a6f60e49b9fc28f2698edb9, type: 2}
+  startupFrames: 1
+  activeFrames: 3
+  recoveryFrames: 2
+  damageMultiplier: 1.1
