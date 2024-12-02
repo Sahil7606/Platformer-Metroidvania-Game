@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
-    [HideInInspector] public bool isGrounded;
-
-    LayerMask ground;
+    public bool IsGrounded {get; private set;}
+    private LayerMask ground;
 
     // Ground Layer
     void Start()
@@ -21,7 +20,7 @@ public class GroundChecker : MonoBehaviour
     {
         if (other.gameObject.layer == ground)
         {
-            isGrounded = true;
+            IsGrounded = true;
         }
     }
 
@@ -30,7 +29,7 @@ public class GroundChecker : MonoBehaviour
     {
         if (other.gameObject.layer == ground)
         {
-            isGrounded = false;
+            IsGrounded = false;
         }
     }
 }

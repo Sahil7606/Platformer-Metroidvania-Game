@@ -1,0 +1,38 @@
+@startuml State Machine
+
+' Define classes
+class SMCore {
+    - StateMachine stateMachine
+    - State previousState
+    - State nextState
+    + void HandleStateSwitch(State state)
+    + void SetupStates()
+}
+
+class State {
+    - float startTime
+    + float stateRuntime
+    + float stateFixedRuntime
+    + string stateName
+    + void SetCore(SMCore core)
+    + void Initialize()
+    + void Enter()
+    + void Exit()
+    + void StateUpdate()
+    + void StateFixedUpdate()
+    + State GetNextState()
+}
+
+class StateMachine {
+    + State state
+    + State previousState
+    + bool isTransitioning
+    + void Set(State newState)
+}
+
+' Define relationships
+SMCore <|-- State
+StateMachine "1" *-- "1..*" State : manages
+SMCore "1" *-- "1..*" State : uses
+
+@enduml
