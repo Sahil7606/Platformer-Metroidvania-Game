@@ -49,7 +49,7 @@ public class PlayerCore : SMCore
     {   // If the state machine isnt already transitioning states, then check for next state
         if (!stateMachine.isTransitioning)
         {
-            HandleStateSwitch(state); // Inherited from SMCore
+            stateMachine.EvaluateStateTransition(state); // Inherited from SMCore
         }
         state.StateUpdate(); // Runs the update method on the current state
     }
