@@ -51,7 +51,7 @@ public class PlayerCore : SMCore
         {
             stateMachine.EvaluateStateTransition(state); // Inherited from SMCore
         }
-        state.StateUpdate(); // Runs the update method on the current state
+        state.StateUpdateHierarchy(); // Runs the update method on the current state
     }
 
     private void FixedUpdate()
@@ -65,7 +65,7 @@ public class PlayerCore : SMCore
         // Runs state fixed update method if state machine isnt transitioning
         if (!stateMachine.isTransitioning)
         {
-            state.StateFixedUpdate();
+            state.StateFixedUpdateHierarchy();
         }
     }
 

@@ -2,13 +2,25 @@ using UnityEngine;
 
 public abstract class SMCore : MonoBehaviour
 {
-    protected StateMachine stateMachine = new StateMachine(); // Creates new state machine object
-    public State state => stateMachine.state;
-    public State nextState => stateMachine.nextState;
-    public State initialState;
-    [HideInInspector] public State previousState => stateMachine.previousState;
-    
+    /*
+    =====================================================================================
+    References to state machine and states
+    =====================================================================================
+    */
 
+    protected StateMachine stateMachine = new StateMachine(); // Creates new state machine object
+    public State state => stateMachine.state; // Reference to the current state
+    public State nextState => stateMachine.nextState; // Reference to the next state
+    [HideInInspector] public State previousState => stateMachine.previousState; // Reference to the previous state
+    [SerializeField] protected State initialState; // Initial state for the state machine
+
+
+    /*
+    =====================================================================================
+    Functions for State Machine cores
+    =====================================================================================
+    */
+     
     // Sets up states on Awake
     protected virtual void Awake()
     {
