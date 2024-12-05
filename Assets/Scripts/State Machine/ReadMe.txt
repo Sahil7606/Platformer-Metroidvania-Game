@@ -1,5 +1,7 @@
 This is a very high level description of how the state machine works
 
+Video Links: 
+
 -There are 3 main classes, the core, the states, and the state machine
     
     -The core is the brain of the state machine
