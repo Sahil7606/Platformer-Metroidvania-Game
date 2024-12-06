@@ -6,6 +6,7 @@ public class PlayerInputManager : MonoBehaviour
 {
     public Vector2 AxisInput {get; private set;}
     public bool jumpButtonDown {get; private set;}
+    public bool attackButtonDown {get; private set;}
     private void OnMove(InputValue value)
     {
         AxisInput = value.Get<Vector2>();
@@ -20,6 +21,18 @@ public class PlayerInputManager : MonoBehaviour
         else
         {
             jumpButtonDown = false;
+        }
+    }
+
+    private void OnAttack(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            attackButtonDown = true;
+        }
+        else
+        {
+            attackButtonDown = false;
         }
     }
 }

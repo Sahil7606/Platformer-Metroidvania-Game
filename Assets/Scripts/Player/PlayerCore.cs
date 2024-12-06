@@ -24,6 +24,7 @@ public class PlayerCore : SMCore
     public IdleState idleState;
     public RunState runState;
     public JumpState jumpState;
+    public AttackState attackState;
     public AirState airState;
 
     public bool canMoveX {get; set;}

@@ -1889,6 +1889,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a37051beda5d5a43a00b566b67c796f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1576694454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576694455}
+  - component: {fileID: 1576694456}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1576694455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576694454}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2013055224}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576694456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576694454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf9c36988cadab48a8360629960964a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 11400000, guid: fd0a7ddd3782e634288de671c5e3c057, type: 2}
 --- !u!1 &1589674653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,6 +2214,7 @@ MonoBehaviour:
   idleState: {fileID: 770859968}
   runState: {fileID: 1154969237}
   jumpState: {fileID: 174171606}
+  attackState: {fileID: 1576694456}
   airState: {fileID: 1589674655}
 --- !u!114 &1710413302
 MonoBehaviour:
@@ -2631,6 +2677,7 @@ Transform:
   - {fileID: 1154969236}
   - {fileID: 174171605}
   - {fileID: 1589674654}
+  - {fileID: 1576694455}
   m_Father: {fileID: 1710413297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
