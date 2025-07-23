@@ -66,17 +66,17 @@ public class TraversalStateMachine : MonoBehaviour
                 canAttack = true;
                 if (Mathf.Abs(playerMovement.MoveInput.x) > Mathf.Epsilon) { SwitchState(TraversalState.Walking); break; }
                 if (playerJump.jumpButtonDown && !playerJump.hasJumped) { SwitchState(TraversalState.Jumping); break; }
-                if (playerRigidbody.velocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
+                if (playerRigidbody.linearVelocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
                 break;
             case TraversalState.Walking:
                 canAttack = true;
                 if (Mathf.Abs(playerMovement.MoveInput.x) < Mathf.Epsilon) { SwitchState(TraversalState.Idle); break; }
                 if (playerJump.jumpButtonDown && !playerJump.hasJumped) { SwitchState(TraversalState.Jumping); break; }
-                if (playerRigidbody.velocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
+                if (playerRigidbody.linearVelocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
                 break;
             case TraversalState.Jumping:
                 canAttack = false;
-                if (playerRigidbody.velocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
+                if (playerRigidbody.linearVelocity.y < Mathf.Epsilon && !isGrounded) { SwitchState(TraversalState.Falling); break; }
                 break;
             case TraversalState.Falling:
                 canAttack = false;

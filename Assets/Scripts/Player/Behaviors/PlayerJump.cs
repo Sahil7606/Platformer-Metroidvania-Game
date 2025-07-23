@@ -70,7 +70,7 @@ public class PlayerJump : MonoBehaviour
     }
 
     // Input system callback when jump button is pressed
-    void OnJump(InputValue jumpButton)
+    private void OnJump(InputValue jumpButton)
     {
         // Tracks if the jump button is pressed
         jumpButtonDown = jumpButton.isPressed;
@@ -86,14 +86,14 @@ public class PlayerJump : MonoBehaviour
         // Initial force for the jump
         if (!initialForceApplied)
         {
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpHeight);
+            playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, jumpHeight);
             hasJumped = true;
             initialForceApplied = true;
         }
         // Apply additional boost when the button is held
         else if (jumpButtonDown && hasJumped && buttonHoldTime <= maxHoldTime)
         {
-            playerRigidbody.velocity += new Vector2(0, jumpHoldStrength - (buttonHoldTime / 3.5f));
+            playerRigidbody.linearVelocity += new Vector2(0, jumpHoldStrength - (buttonHoldTime / 3.5f));
         }
     }
 

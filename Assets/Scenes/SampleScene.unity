@@ -1769,11 +1769,6 @@ GameObject:
   - component: {fileID: 1710413294}
   - component: {fileID: 1710413298}
   - component: {fileID: 1710413300}
-  - component: {fileID: 1710413302}
-  - component: {fileID: 1710413308}
-  - component: {fileID: 1710413307}
-  - component: {fileID: 1710413306}
-  - component: {fileID: 1710413309}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1972,87 +1967,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1710413302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710413293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27fb4186e3aef404898c4934ca204c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 1710413308}
-  playerJump: {fileID: 1710413307}
-  groundChecker: {fileID: 992395403}
---- !u!114 &1710413306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710413293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b91bc54cf7770a3458285f715c4369ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 1710413294}
-  fallGravityScale: 9
-  defaultGravityScale: 6
---- !u!114 &1710413307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710413293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41792fc66360ac43af5be58c5d68ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 1710413294}
-  playerAnimator: {fileID: 1710413295}
-  jumpHeight: 13.5
-  jumpHoldStrength: 1.3
-  maxHoldTime: 0.3
-  jumpButtonDown: 0
-  hasJumped: 0
---- !u!114 &1710413308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710413293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd85529be4472c8488279987774b6fa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRigidbody: {fileID: 1710413294}
-  playerAnimator: {fileID: 1710413295}
-  speed: 6
-  MoveInput: {x: 0, y: 0}
---- !u!114 &1710413309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710413293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b41d5a44b31319c488a6ecff9f9fe162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combo:
-  - {fileID: 11400000, guid: 7fd6aefb9887e2a4bb9ad3e603aaf246, type: 2}
-  - {fileID: 11400000, guid: cf14c22ef931350469b66912852e9576, type: 2}
-  - {fileID: 11400000, guid: e6e95f2dec0c64d4ba969691de2a3794, type: 2}
 --- !u!1 &1777841373
 GameObject:
   m_ObjectHideFlags: 0

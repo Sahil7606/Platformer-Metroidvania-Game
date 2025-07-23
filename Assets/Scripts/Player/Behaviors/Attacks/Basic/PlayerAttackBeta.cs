@@ -99,7 +99,7 @@ public class PlayerAttackBeta : MonoBehaviour
     IEnumerator FrameDataTracker()
     {
         stateMachine.enabled = false;
-        rb2d.velocity = Vector2.zero;
+        rb2d.linearVelocity = Vector2.zero;
         isAttacking = true;
 
         state = AttackState.start;
