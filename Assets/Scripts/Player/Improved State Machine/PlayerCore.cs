@@ -1,5 +1,3 @@
-using System;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -13,19 +11,24 @@ public class PlayerCore : SMCore
     [HideInInspector] public Animator animator;
     [HideInInspector] public InputManager input;
 
+    [HideInInspector] public new Transform transform;
+
     // States
     [Header("Player States")]
     public IdleState idle;
     public RunState run;
 
     // Player control variables
-    public float horizontalMoveSpeed = 5;
+    [Header("Player Properties")]
+    public float horizontalMoveSpeed;
 
     protected override void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         input = GetComponent<InputManager>();
+
+        transform = GetComponent<Transform>();
 
         base.Awake();
     }
@@ -37,16 +40,22 @@ public class PlayerCore : SMCore
 
     protected override void FixedUpdate()
     {
+        base.FixedUpdate();
+
         HandleHorizontalMovement();
+        FlipSprite();
     }
 
     private void HandleHorizontalMovement()
     {
-        rigidbody.linearVelocityX = input.horizontalInput * horizontalMoveSpeed * Time.fixedDeltaTime;
+        rigidbody.linearVelocityX = input.horizontalInput * horizontalMoveSpeed;
     }
 
     private void FlipSprite()
     {
-        throw new NotImplementedException();
+        if (Mathf.Abs(input.horizontalInput) > Mathf.Epsilon)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(input.horizontalInput), 1);
+        }
     }
 }
