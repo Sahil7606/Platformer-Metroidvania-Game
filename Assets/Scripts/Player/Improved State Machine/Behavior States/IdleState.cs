@@ -5,13 +5,20 @@ public class IdleState : PlayerState
 {
     public override string stateName => "Idle";
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        animator.Play("Player Idle");
+    }
+
     public override State GetNextState()
     {
-        if (Mathf.Abs(input.horizontalInput.x) > Mathf.Epsilon)
+        if (Mathf.Abs(input.horizontalInput) > Mathf.Epsilon)
         {
-            return null;
+            return core.run;
         }
 
-        return null;
+        return this;
     }
 }

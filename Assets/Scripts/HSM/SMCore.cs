@@ -33,6 +33,25 @@ public abstract class SMCore : MonoBehaviour
         stateMachine.Set(initialState);
     }
 
+    // Updates the state machine every frame
+    protected virtual void Update()
+    {
+        if (state != null)
+        {
+            stateMachine.EvaluateStateTransition(state);
+            state.StateUpdate();
+        }
+    }
+
+    // Updates the state machine every fixed frame for physics
+    protected virtual void FixedUpdate()
+    {
+        if (state != null)
+        {
+            state.StateFixedUpdate();
+        }
+    }
+
     // Gets each state from child objects and sets their SMCore to itself and initializes each state
     protected void SetupStates()
     {

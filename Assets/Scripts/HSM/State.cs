@@ -12,7 +12,7 @@ public abstract class State : MonoBehaviour
     [HideInInspector] protected float startTime; 
     public float stateRuntime => Time.time - startTime; // For checking in Update()
     public float stateFixedRuntime => Time.fixedTime - startTime; // For checking in FixedUpdate()
-    public abstract string stateName {get;} // Each state has a name used for debugging
+    public abstract string stateName { get; } // Each state has a name used for debugging
     
 
     /*

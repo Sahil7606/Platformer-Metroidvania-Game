@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,13 +6,13 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     // Variables notify the other scripts of when an input is pressed
-    public Vector2 horizontalInput { get; private set; }
+    public float horizontalInput { get; private set; }
     public bool jumpButtonDown { get; private set; }
 
     // Uses input system to track input
     private void OnMove(InputValue input)
     {
-        horizontalInput = input.Get<Vector2>();
+        horizontalInput = input.Get<Vector2>().x;
         Debug.Log(horizontalInput);
     }
 
@@ -19,6 +20,7 @@ public class InputManager : MonoBehaviour
     {
         if (input.isPressed)
         {
+            jumpButtonDown = true;
             Debug.Log("Jump button down");
         }
         else
