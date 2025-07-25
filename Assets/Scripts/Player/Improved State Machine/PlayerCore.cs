@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -20,7 +19,9 @@ public class PlayerCore : SMCore
 
     // Player control variables
     [Header("Player Properties")]
-    public float horizontalMoveSpeed;
+    public float maxRunSpeed;
+    public float acceleration;
+    public float deceleration;
 
     protected override void Awake()
     {
@@ -48,7 +49,7 @@ public class PlayerCore : SMCore
 
     private void HandleHorizontalMovement()
     {
-        rigidbody.linearVelocityX = input.horizontalInput * horizontalMoveSpeed;
+        rigidbody.linearVelocityX = input.horizontalInput * maxRunSpeed;
     }
 
     private void FlipSprite()

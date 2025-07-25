@@ -2084,9 +2084,10 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   animator: {fileID: 0}
   input: {fileID: 0}
+  transform: {fileID: 0}
   idle: {fileID: 1121743750}
   run: {fileID: 1547609407}
-  horizontalMoveSpeed: 250
+  horizontalMoveSpeed: 5
 --- !u!114 &1710413302
 MonoBehaviour:
   m_ObjectHideFlags: 0
