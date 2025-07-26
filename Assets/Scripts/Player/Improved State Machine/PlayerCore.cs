@@ -12,6 +12,9 @@ public class PlayerCore : SMCore
 
     [HideInInspector] public new Transform transform;
 
+    // Player controller objects
+    private HorizontalMovementController horizontalMovementController;
+
     // States
     [Header("Player States")]
     public IdleState idle;
@@ -22,14 +25,20 @@ public class PlayerCore : SMCore
     public float maxRunSpeed;
     public float acceleration;
     public float deceleration;
+    public float velocityPower;
+    public float runFriction;
 
     protected override void Awake()
     {
+        // Fetch components from heirarchy
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         input = GetComponent<InputManager>();
 
         transform = GetComponent<Transform>();
+
+        // Instantiate non-component objects
+        horizontalMovementController = new HorizontalMovementController(this);
 
         base.Awake();
     }
@@ -43,13 +52,8 @@ public class PlayerCore : SMCore
     {
         base.FixedUpdate();
 
-        HandleHorizontalMovement();
+        horizontalMovementController.MoveX(input.horizontalInput, maxRunSpeed, acceleration, deceleration, velocityPower, runFriction);
         FlipSprite();
-    }
-
-    private void HandleHorizontalMovement()
-    {
-        rigidbody.linearVelocityX = input.horizontalInput * maxRunSpeed;
     }
 
     private void FlipSprite()

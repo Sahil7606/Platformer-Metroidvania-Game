@@ -14,7 +14,7 @@ public class IdleState : PlayerState
 
     public override State GetNextState()
     {
-        if (Mathf.Abs(input.horizontalInput) > Mathf.Epsilon)
+        if (Mathf.Abs(rigidbody.linearVelocityX) > 0.01f)
         {
             return core.run;
         }

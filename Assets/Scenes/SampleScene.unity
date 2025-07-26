@@ -2155,9 +2155,11 @@ MonoBehaviour:
   transform: {fileID: 0}
   idle: {fileID: 1121743750}
   run: {fileID: 1547609407}
-  maxRunSpeed: 0
-  acceleration: 0
-  deceleration: 0
+  maxRunSpeed: 7
+  acceleration: 4
+  deceleration: 10
+  velocityPower: 1.1
+  runFriction: 0.1
 --- !u!114 &1710413302
 MonoBehaviour:
   m_ObjectHideFlags: 0
