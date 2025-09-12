@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="78d3324a-46bb-4379-b52f-63a043565dd9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Game Design Doc/Game Design Doc.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Game Design Doc/Game Design Doc.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Game Design Doc/Game Design Doc.docx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../Game Design Doc/Game Design Doc.docx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Demo Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Demo Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/Basic Attack 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/Basic Attack 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/Basic Attack 2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/Basic Attack 2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/Basic Attack 3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/Basic Attack 3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/PlayerAttackBeta.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/Attacks/Basic/PlayerAttackBeta.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/PlayerJump.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/PlayerJump.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/PlayerMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Behaviors/PlayerMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States/IdleState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States/IdleState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States/JumpState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States/JumpState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States/RunState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Behavior States/RunState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Horizontal Movement Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/Horizontal Movement Controller.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/InputManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/InputManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/PlayerCore.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/PlayerCore.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/PlayerState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Improved State Machine/PlayerState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/State Machines.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/State Machines/PlayerGravityHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/State Machines/PlayerGravityHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/State Machines/TraversalStateMachine.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/State Machines/TraversalStateMachine.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/States.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="32bhqDejftrWlnfajrynSxJWawh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78d3324a-46bb-4379-b52f-63a043565dd9" name="Changes" comment="" />
+      <created>1757695368783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757695368783</updated>
+      <workItem from="1757695370449" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
