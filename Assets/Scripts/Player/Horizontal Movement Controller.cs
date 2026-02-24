@@ -7,11 +7,11 @@ public class HorizontalMovementController
     private Rigidbody2D rigidbody;
     private Transform transform;
 
-    public HorizontalMovementController(PlayerCore _core)
+    public HorizontalMovementController(PlayerCore core)
     {
-        core = _core;
-        rigidbody = _core.rigidbody;
-        transform = _core.transform;
+        this.core = core;
+        rigidbody = core.rigidbody;
+        transform = core.transform;
     }
 
     public void MoveX(float xInput, float runSpeed, float acceleration, float deceleration, float power, float frictionConstant)
@@ -19,9 +19,9 @@ public class HorizontalMovementController
         float targetVelocity = xInput * runSpeed;
         float targetDeltaVelocity = targetVelocity - rigidbody.linearVelocityX;
 
-        float acceleration_rate = (Mathf.Abs(targetVelocity) > 0.01) ? acceleration : deceleration;
+        float accelerationRate = (Mathf.Abs(targetVelocity) > 0.01) ? acceleration : deceleration;
 
-        float movement = Mathf.Pow(Mathf.Abs(targetDeltaVelocity) * acceleration_rate, power) * Mathf.Sign(targetDeltaVelocity);
+        float movement = Mathf.Pow(Mathf.Abs(targetDeltaVelocity) * accelerationRate, power) * Mathf.Sign(targetDeltaVelocity);
 
         rigidbody.AddForceX(movement);
 
@@ -33,8 +33,10 @@ public class HorizontalMovementController
 
     private void ApplyStopFriction(float frictionConstant)
     {
-        float frictionAmout = Mathf.Min(Mathf.Abs(rigidbody.linearVelocityX), frictionConstant) * -Mathf.Sign(rigidbody.linearVelocityX);
+        float frictionAmount = Mathf.Min(Mathf.Abs(rigidbody.linearVelocityX), frictionConstant) * -Mathf.Sign(rigidbody.linearVelocityX);
 
-        rigidbody.AddForceX(frictionAmout, ForceMode2D.Impulse);
+        rigidbody.AddForceX(frictionAmount, ForceMode2D.Impulse);
     }
 }
+
+

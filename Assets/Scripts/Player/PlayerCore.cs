@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(InputManager))]
+
 public class PlayerCore : SMCore
 {
     // Blackboard components
@@ -28,7 +29,7 @@ public class PlayerCore : SMCore
 
     protected override void Awake()
     {
-        // Fetch components from heirarchy
+        // Fetch components from hierarchy
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         input = GetComponent<InputManager>();
@@ -69,3 +70,5 @@ public class PlayerCore : SMCore
         }
     }
 }
+
+

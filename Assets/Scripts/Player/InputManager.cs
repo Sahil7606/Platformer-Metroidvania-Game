@@ -1,6 +1,6 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 [RequireComponent(typeof(PlayerCore))]
 public class InputManager : MonoBehaviour
@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
     {
         horizontalInput = input.Get<Vector2>().x;
         Debug.Log(horizontalInput);
+        
+        
     }
 
     private void OnJump(InputValue input)
@@ -30,3 +32,5 @@ public class InputManager : MonoBehaviour
         }
     }
 }
+
+
